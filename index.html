@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vatana - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .portfolio-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .profile-name {
+            background: linear-gradient(
+                45deg,
+                #662D8C,
+                #ED1E79,
+                #FFB03B,
+                #FF8000,
+                #FF4733,
+                #C70039
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #55cfff 0%, #0047e0 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('background header.avif');
+            opacity: 0.1;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.3);
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #4a00e0;
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #8e2de2;
+            border-radius: 2px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .skill-item, .experience-item, .school-item, .project-item {
+            background: #f5f7fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover, .experience-item:hover, .school-item:hover, .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .progress {
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #8e2de2, #4a00e0);
+        }
+
+        .experience-item h5, .school-item h5 {
+            color: #4a00e0;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .date, .school-item .date {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .contact-info i {
+            color: #4a00e0;
+            margin-right: 10px;
+        }
+
+        .section a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0034e0;
+            color: white;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio-container">
+        <!-- Header -->
+        <header class="header">
+            <img src="profile.jpg" class="profile-img" alt="Vatana Profile">
+            <h1 class="profile-name"><i>VUTH Vatana</i></h1>
+            <p class="lead">Web Developer & Software Development</p>
+        </header>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- About -->
+            <div class="section">
+                <h2>About Me</h2>
+                <p>
+                    Hello! I’m Vatana, a passionate web developer with a knack for creating visually appealing 
+                    and functional digital solutions. With expertise in modern web technologies, I strive to 
+                    deliver projects that blend creativity and technical precision.
+                </p>
+            </div>
+
+            <!-- Skills -->
+            <div class="section">
+                <h2>Skills</h2>
+                <div id="skills-list">
+                    <!-- Skills will be added dynamically -->
+                </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="section">
+                <h2>Experience</h2>
+                <div id="experience-list">
+                    <!-- Experience will be added dynamically -->
+                </div>
+            </div>
+
+            <!-- School (Education) -->
+            <div class="section">
+                <h2>Education</h2>
+                <div id="school-list">
+                    <!-- School will be added dynamically -->
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="section">
+                <h2>Projects</h2>
+                <div id="projects-list">
+                    <!-- Projects will be added dynamically --> 
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="section">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    <p><a href="vuthvatana.study@gmail.com"><i class="fas fa-envelope"></i>vuthvatana.study@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i>+855 114 946 10</p>
+                    <p><a href="https://www.facebook.com/share/18WrDBz7Wa/"><i class="fab fa-facebook"></i>Vuth Vathana</a></p>
+                    <p><a href="https://github.com/Vatana007"><i class="fab fa-github"></i>Vatana007</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Vatana | Designed with Passion</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS and Custom JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Skills Data
+        const skills = [
+            { name: "HTML", level: "90%" },
+            { name: "CSS", level: "85%" },
+            { name: "JavaScript", level: "80%" },
+            { name: "Bootstrap", level: "88%" }
+        ];
+
+        // Experience Data
+        const experiences = [
+            {
+                title: "Web Developer",
+                company: "IT Technology.",
+                date: "Jan 2023 - Aug 2024",
+                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur cum provident suscipit quibusdam ad harum."
+            },
+            {
+                title: "Software Development",
+                company: "Digital University of Cambodia",
+                date: "Sep 2024 - Present",
+                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur cum provident suscipit quibusdam ad harum."
+            }
+        ];
+
+        // School (Education) Data
+        const schools = [
+            {
+                degree: "Bachelor of Information Technology",
+                institution: "Digital University of Cambodia",
+                date: "Jan 2024 - Present",
+                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur cum provident suscipit quibusdam ad harum."
+            },
+            {
+                degree: "High School",
+                institution: "Preah Bat Soramith High School",
+                date: "Nov 2020 - Dec 2023",
+                description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur cum provident suscipit quibusdam ad harum."
+            }
+        ];
+
+        // Projects Data
+        const projects = [
+            { title: "Project 1", desc: "A responsive web application" },
+            { title: "Project 2", desc: "E-commerce website design" },
+            { title: "Project 3", desc: "Personal portfolio template" }
+        ];
+
+        // Add Skills Dynamically
+        const skillsList = document.getElementById('skills-list');
+        skills.forEach(skill => {
+            skillsList.innerHTML += `
+                <div class="skill-item">
+                    <div class="d-flex justify-content-between">
+                        <span>${skill.name}</span>
+                        <span>${skill.level}</span>
+                    </div>
+                    <div class="progress mt-2">
+                        <div class="progress-bar" style="width: ${skill.level}" role="progressbar"></div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Add Experience Dynamically
+        const experienceList = document.getElementById('experience-list');
+        experiences.forEach(exp => {
+            experienceList.innerHTML += `
+                <div class="experience-item">
+                    <h5>${exp.title}</h5>
+                    <p class="mb-1">${exp.company}</p>
+                    <p class="date">${exp.date}</p>
+                    <p>${exp.description}</p>
+                </div>
+            `;
+        });
+
+        // Add School (Education) Dynamically
+        const schoolList = document.getElementById('school-list');
+        schools.forEach(school => {
+            schoolList.innerHTML += `
+                <div class="school-item">
+                    <h5>${school.degree}</h5>
+                    <p class="mb-1">${school.institution}</p>
+                    <p class="date">${school.date}</p>
+                    <p>${school.description}</p>
+                </div>
+            `;
+        });
+
+        // Add Projects Dynamically
+        const projectsList = document.getElementById('projects-list');
+        projects.forEach(project => {
+            projectsList.innerHTML += `
+                <div class="project-item">
+                    <h5>${project.title}</h5>
+                    <p>${project.desc}</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
